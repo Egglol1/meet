@@ -1,0 +1,4 @@
+root: D:\CareerFoundry-School\Full-Stack-Immersion\Project-5-Meet-App\meet 
+path: C:\Program Files\nodejs 
+arch: 64 
+proxy: none
