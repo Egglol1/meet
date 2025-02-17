@@ -1,8 +1,15 @@
 import React from 'react';
+import EventList from './components/EventList';
+import CitySearch from './components/CitySearch';
 import './App.css';
 
 const App = () => {
-  return <div></div>;
+  return (
+    <div className="App">
+      <CitySearch />
+      <EventList />
+    </div>
+  );
 };
 
 export default App;
