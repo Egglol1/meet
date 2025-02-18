@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import EventList from '../src/components/EventList';
-import { getEvents } from '../arc/api';
+import { getEvents } from '../src/api';
 
 describe('<EventList /> component', () => {
   let EventListComponent;
