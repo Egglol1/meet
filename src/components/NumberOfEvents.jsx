@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 
-const NumberOfEvents = ({ currentNOE, setCurrentNOE }) => {
+const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
   const [number, setNumber] = useState(currentNOE);
 
   const handleInputChanged = (event) => {
     const value = Number(event.target.value);
+
     setNumber(value);
     setCurrentNOE(value);
+
+    let errorText;
+    if (value <= 0) {
+      errorText = 'Please only use positive integers in this search field.';
+    } else {
+      errorText = '';
+    }
+    setErrorAlert(errorText);
   };
 
   return (

@@ -8,7 +8,11 @@ describe('<NumberOfEvents /> component', () => {
   let setCurrentNOE;
   beforeEach(() => {
     NumberOfEventsComponent = render(
-      <NumberOfEvents currentNOE={32} setCurrentNOE={[]} />
+      <NumberOfEvents
+        currentNOE={32}
+        setCurrentNOE={[]}
+        setErrorAlert={() => {}}
+      />
     );
   });
   test('contains an element with the role of textbox', () => {
@@ -24,7 +28,11 @@ describe('<NumberOfEvents /> component', () => {
   test('value of input changes with user typing', async () => {
     const user = userEvent.setup();
     NumberOfEventsComponent.rerender(
-      <NumberOfEvents currentNOE={32} setCurrentNOE={() => {}} />
+      <NumberOfEvents
+        currentNOE={32}
+        setCurrentNOE={() => {}}
+        setErrorAlert={() => {}}
+      />
     );
     const numberTextBox = NumberOfEventsComponent.getByRole('spinbutton');
     await user.type(numberTextBox, '{backspace}{backspace}10');
