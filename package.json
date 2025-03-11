@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "main": "index.html",
+  "homepage": "https://egglol1.github.io/meet/",
   "author": "Alex Eggleston",
   "type": "module",
   "scripts": {
