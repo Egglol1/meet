@@ -102,3 +102,10 @@ input[type="number"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+@media (max-width: 768x) {
+  .charts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
