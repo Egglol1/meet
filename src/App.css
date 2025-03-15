@@ -98,7 +98,7 @@ input[type="number"] {
   z-index: 1000;
 }
 
-.chart {
-  position: sticky;
-  right: 20px;
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

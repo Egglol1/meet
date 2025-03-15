@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 
 import {
@@ -22,24 +23,31 @@ const CityEventsChart = ({ allLocations, events }) => {
       const count = events.filter(
         (event) => event.location === location
       ).length;
-      const city = location.split(', ')[0];
+      const city = location.split(/, | - /)[0];
       return { count, city };
     });
     return data;
   };
 
   return (
-    <ResponsiveContainer classname="chart" width="99%" height={400}>
+    <ResponsiveContainer height={400} width={500}>
       <ScatterChart
         margin={{
           top: 20,
           right: 20,
-          bottom: 20,
-          left: 20,
+          bottom: 60,
+          left: 10,
         }}
       >
         <CartesianGrid />
-        <XAxis type="category" dataKey="city" name="City" />
+        <XAxis
+          type="category"
+          dataKey="city"
+          name="City"
+          angle={60}
+          interval={0}
+          tick={{ dx: 20, dy: 40, fontSize: 14 }}
+        />
         <YAxis
           type="number"
           dataKey="count"
