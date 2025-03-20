@@ -1,7 +1,6 @@
 // src/api.js
 
 import mockData from './mock-data';
-import NProgress from 'nprogress';
 
 /**
  *
@@ -30,13 +29,11 @@ const checkToken = async (accessToken) => {
  * This function will fetch the list of all events
  */
 export const getEvents = async () => {
-  NProgress.start();
   if (window.location.href.startsWith('http://localhost')) {
     return mockData;
   }
   if (!navigator.onLine) {
     const events = localStorage.getItem('lastEvents');
-    NProgress.done();
     return events ? JSON.parse(events) : [];
   }
   const token = await getAccessToken();
@@ -50,7 +47,6 @@ export const getEvents = async () => {
     const response = fetch(url);
     const result = (await response).json();
     if (result) {
-      NProgress.done();
       localStorage.setItem('lastEvents', JSON.stringify(result.events));
       return result.events;
     } else return null;
