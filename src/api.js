@@ -44,8 +44,8 @@ export const getEvents = async () => {
       'https://0k59r9akq7.execute-api.us-east-2.amazonaws.com/dev/api/get-events' +
       '/' +
       token;
-    const response = fetch(url);
-    const result = (await response).json();
+    const response = await fetch(url);
+    const result = await response.json();
     if (result) {
       localStorage.setItem('lastEvents', JSON.stringify(result.events));
       return result.events;
